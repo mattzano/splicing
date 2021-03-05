@@ -1,3 +1,4 @@
+name: scallop
 channels:
   - conda-forge
   - bioconda

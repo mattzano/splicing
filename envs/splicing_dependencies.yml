@@ -1,3 +1,4 @@
+name: splice_depends
 channels:
   - bioconda
   - r
