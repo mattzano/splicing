@@ -1,10 +1,12 @@
 # splicing
-Splicing done with MAJIQ tool **still a work in progress**
+Splicing done with MAJIQ tool
 The purpose of this pipeline is to be able to run MAJIQ using Snakemake. The aim is to make MAJIQ easier to run for non-bioinformaticians and it produces additional parsing and annotation to the MAJIQ output.
 
 # Needed files
-1. Aligned, sorted, and indexed BAM files of RNA-seq. You will need .bam and .bai files for all your samples.
-2. GFF3 and GTF of your species of interest
+1. Aligned, sorted, and indexed BAM files of RNA-seq for all your samples.
+ - .bam 
+ - .bam.bai files 
+2. GFF3 and GTF of your species of interest - already provided with the config file
 3. A formatted sample sheet, see examples and explanation below
 # Get started
 ## Necessary R packages
@@ -23,17 +25,13 @@ After you've installed the necessary software, snakemake, R libraries, MAJIQ its
 2. Edit the config/comparisons.yaml
 3. Edit the config/config.yaml
 
-## Making a sample sheet
+## 1.Making a sample sheet - the same used for alignment should work
 
-See example data for the formating of sample sheets.
-The following columns are mandatory:
-sample_name,
-group,
-exclude_sample_downstream_analysis
-
-exclude_sample_downstream_analysis should be present, if you want to exclude a sample it should be a 1, otherwise you can leave it blank
-
-After these 3 critical columns, you can include as many additional columns as you like
+Remember, the following columns are mandatory:
+ - sample_name,
+ - group,
+ - exclude_sample_downstream_analysis # this should be present, if you want to exclude a sample it should be a 1, otherwise you can leave it blank
+ - After these 3 critical columns, you can include as many additional columns as you like
 
 Here is an example sample sheet where we have a het, hom, and wt of a mutant
 
@@ -53,10 +51,7 @@ Here is an example sample sheet where we have a het, hom, and wt of a mutant
 | M323K_WT_3  | wt    |                                    | three  |
 
 My bams are named like this:
-
-`M323K_HET_1_unique_rg_fixed.bam`
-
-with all bams sharing the `_unique_rg_fixed` suffix, but I don't include that in the `sample_name`.
+`M323K_HET_1.Aligned.sorted.out.bam`
 
 I have three groups which I put in the group column, and then I don't have any reason to exclude any of the samples so I leave that blank as well.
 
@@ -66,7 +61,7 @@ After that, I've included a column saying which litter the mice came from, but I
 
 ## Setting up your comparisons
 
-To compare groups, we need to go int the config/comparisons.yaml and edit it
+To compare groups, we need to go int the config/comparisons.yaml and edit it. You can either compare pairwise (first and second examples) or by pooling some of the conditions together (third example)
 
 Here's an example from the sample sheet above
 
@@ -96,6 +91,8 @@ litterComparison:
     - five
 
 ## Making the config
+In the config/config.yaml file you only have to change/check lines 2,3,4,5,6,10,15,18
+
 
 # Final outputs
 Underneath the folder in
