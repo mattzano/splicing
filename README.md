@@ -91,7 +91,7 @@ litterComparison:
     - five
 
 ## Making the config
-In the config/config.yaml file you only have to change/check lines 2,3,4,5,6,10,15,18
+In the config/config.yaml file you only have to change/check lines 2,3,4,5,6,10,15,18,28
 
 
 # Final outputs
