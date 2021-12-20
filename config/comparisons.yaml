@@ -70,16 +70,16 @@ nonActivatedControlVersusActivatedControl:
   column_name:
     - group
   nonActivatedControl:
-    - Non-activated_Control
+    - NonActivated_Control
   ActivatedControl:
     - Activated_Control
 nonActivatedControlVersusNonActivatedTDP43KD:
   column_name:
     - group
   nonActivatedControl:
-    - Non-activated_Control
+    - NonActivated_Control
   nonActivatedTDP43KD:
-    - Non-Activated_TDP43KD
+    - NonActivated_TDP43KD
 ActivatedControlVersusActivatedTDP43KD:
   column_name:
     - group
@@ -91,7 +91,7 @@ nonActivatedTDP43KDVersusActivatedTDP43KD:
   column_name:
     - group
   nonActivatedTDP43KD:
-    - Non-Activated_TDP43KD
+    - NonActivated_TDP43KD
   ActivatedTDP43KD:
     - Activated_TDP43KD
 clone1:

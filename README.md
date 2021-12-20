@@ -10,28 +10,27 @@ The purpose of this pipeline is to be able to run MAJIQ using Snakemake. The aim
 3. A formatted sample sheet, see examples and explanation below
 # Get started
 ## Necessary R packages
-If you're just going to run the build + psi workflows you will need
+#If you're just going to run the build + psi workflows you will need
+#data.table
+#tidyverse
+#optparse
+#glue
+No worries about this because there is an environment provided with the necessary packages
 
-data.table
-tidyverse
-optparse
-glue
-
-Alternatively, there is an environment provided with the necessary packages
-
-After you've installed the necessary software, snakemake, R libraries, MAJIQ itself, you will need to do 3 things to get this pipeline going
-
+You will need to do 3 things to get this pipeline going:
 1. Set up a sample sheet
 2. Edit the config/comparisons.yaml
 3. Edit the config/config.yaml
+
 
 ## 1.Making a sample sheet - the same used for alignment should work
 
 Remember, the following columns are mandatory:
  - sample_name,
- - group,
+ - group, 
  - exclude_sample_downstream_analysis # this should be present, if you want to exclude a sample it should be a 1, otherwise you can leave it blank
  - After these 3 critical columns, you can include as many additional columns as you like
+*Please* use syntactic names for `sample_name` and `group` (no spaces, don't start with a number, use underscores and not hyphens) that would lead to errors!!!
 
 Here is an example sample sheet where we have a het, hom, and wt of a mutant
 
@@ -53,17 +52,12 @@ Here is an example sample sheet where we have a het, hom, and wt of a mutant
 My bams are named like this:
 `M323K_HET_1.Aligned.sorted.out.bam`
 
-I have three groups which I put in the group column, and then I don't have any reason to exclude any of the samples so I leave that blank as well.
-
-*Please* use syntactic names for `sample_name` and `group` (no spaces, don't start with a number, use underscores and not hyphens) I'm not totally sure if that leads to errors, but I would guess it will.
-
-After that, I've included a column saying which litter the mice came from, but I could include as many additional columns as I like.
 
 ## Setting up your comparisons
 
 To compare groups, we need to go int the config/comparisons.yaml and edit it. You can either compare pairwise (first and second examples) or by pooling some of the conditions together (third example)
 
-Here's an example from the sample sheet above
+Here's an example from the sample sheet above:
 
 knockdownexperiment:
   column_name:
@@ -90,8 +84,18 @@ litterComparison:
     - four
     - five
 
+
 ## Making the config
-In the config/config.yaml file you only have to change/check lines 2,3,4,5,6,10,15,18,28
+In the config/config.yaml file you only have to change/check lines:
+- 2, species
+- 3, read_len
+- 4, genome_refcode
+- 5, endtype (pe or se)
+- 6, sampleCSVpath!!!!
+- 10, project_top_level
+- 15, run_name
+- 18, bam_dir!!!!
+- 28 bam_suffix
 
 
 # Final outputs
@@ -147,29 +151,27 @@ majiq
     ├── mut.psi.voila
     └── psi_majiq.log
 ```
-## Submitting on SGE
 
+
+## Submitting on SGE
 1. Build step
 `source submit.sh build run_name`
 2. PSI step
 `source submit.sh psi run_name`
-
 with whatever run name you'd like
 
 ## Submitting on Slurm
-
 1. Build step
 `source submit_slurm.sh build run_name`
 2. PSI step
 `source submit_slurm.sh psi run_name`
 with whatever run name you'd like
-## Running without a cluster
 
+
+## Running without a cluster
 If you don't have a cluster, you can run straight with snakemake
 `snakemake -s workflows/build.smk`
 `snakemake -s workflows/psi.smk`
-
-
 
 
 ## Annotation of splicing events
