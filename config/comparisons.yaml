@@ -87,7 +87,7 @@ ActivatedControlVersusActivatedTDP43KD:
     - Activated_Control
   ActivatedTDP43KD:
     - Activated_TDP43KD
-nonActivatedTDP43KDVersusActivatedTDP43KD
+nonActivatedTDP43KDVersusActivatedTDP43KD:
   column_name:
     - group
   nonActivatedTDP43KD:
