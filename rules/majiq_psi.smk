@@ -93,18 +93,18 @@ rule majiq_delta_psi_tsv:
 #         mkdir -p {params.psi_output_folder}
 #         {params.majiq_path} psi {input.group_majiq} -j {threads} -o {params.psi_output_folder} -n {wildcards.sample}
 #         """
-# rule majiq_psi_tsv:
-#     input:
-#     #this is always calling from the column named 'group' in the sample csv file
-#         voila_file = lambda wildcards: os.path.join(MAJIQ_DIR,"psi_single",'{sample}' + ".psi.voila")
-#     output:
-#         tsv = os.path.join(MAJIQ_DIR,"psi_voila_tsv_single",'{sample}' + ".psi.tsv")
-#     params:
-#         voila_path = config['voila_path_old'],
-#         psi_output_folder = os.path.join(MAJIQ_DIR,"psi_voila_tsv_single"),
-#         splice_graph = os.path.join(MAJIQ_DIR,"builder", "splicegraph.sql")
-#     shell:
-#         """
-#         mkdir -p {params.psi_output_folder}
-#         {params.voila_path} tsv {params.splice_graph} {input.voila_file} -f {output.tsv}
-#         """
+ rule majiq_psi_tsv:
+     input:
+     #this is always calling from the column named 'group' in the sample csv file
+         voila_file = lambda wildcards: os.path.join(MAJIQ_DIR,"psi_single",'{sample}' + ".psi.voila")
+     output:
+         tsv = os.path.join(MAJIQ_DIR,"psi_voila_tsv_single",'{sample}' + ".psi.tsv")
+     params:
+         voila_path = config['voila_path_old'],
+         psi_output_folder = os.path.join(MAJIQ_DIR,"psi_voila_tsv_single"),
+         splice_graph = os.path.join(MAJIQ_DIR,"builder", "splicegraph.sql")
+     shell:
+         """
+         mkdir -p {params.psi_output_folder}
+         {params.voila_path} tsv {params.splice_graph} {input.voila_file} -f {output.tsv}
+         """
