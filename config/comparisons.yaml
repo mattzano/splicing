@@ -3,122 +3,59 @@
 #problems. I suggest camelCase names, but doesn't really matter as long as you can interpret them. Throughout the file they have to be unique.
 #each of these two items has as many idenitifiers as you like, but they must be
 #valid identifiers from the column_name column in the sample_csv. The first identifier is always the baseline group
-doxCurves00125:
+AstroNonActivatedControlVersusActivatedControl:
   column_name:
     - group
-  noDox:
-    - no_dox
-  dox00125:
-    - dox_0.0125
-doxCurves00187:
+  AstroNonActivatedControl:
+    - Astro_NonActivated_Control
+  AstroActivatedControl:
+    - Astro_Activated_Control
+AstroNonActivatedControlVersusNonActivatedTDP43KD:
   column_name:
     - group
-  noDox:
-    - no_dox
-  dox00187:
-    - dox_0.0187
-doxCurves0021:
+  AstroNonActivatedControl:
+    - Astro_NonActivated_Control
+  AstroNonActivatedTDP43KD:
+    - Astro_NonActivated_TDP43KD
+AstroActivatedControlVersusActivatedTDP43KD:
   column_name:
     - group
-  noDox:
-    - no_dox
-  dox0021:
-    - dox_0.021
-doxCurves0025:
+  AstroActivatedControl:
+    - Astro_Activated_Control
+  AstroActivatedTDP43KD:
+    - Astro_Activated_TDP43KD
+AstroNonActivatedTDP43KDVersusActivatedTDP43KD:
   column_name:
     - group
-  noDox:
-    - no_dox
-  dox0025:
-    - dox_0.025
-doxCurves0075:
+  AstroNonActivatedTDP43KD:
+    - Astro_NonActivated_TDP43KD
+  AstroActivatedTDP43KD:
+    - Astro_Activated_TDP43KD
+MicrogliaNonActivatedControlVersusActivatedControl:
   column_name:
     - group
-  noDox:
-    - no_dox
-  dox0075:
-    - dox_0.075
-ControlControlVersusCycloheximideControl:
+  MicrogliaNonActivatedControl:
+    - Microglia_NonActivated_Control
+  MicrogliaActivatedControl:
+    - Microglia_Activated_Control
+MicrogliaNonActivatedControlVersusNonActivatedTDP43KD:
   column_name:
     - group
-  ControlControl:
-    -Control_Control
-  CycloheximideControl:
-    -Cycloheximide_Control
-ControlControlVersusControlTDP43KD:
+  MicrogliaNonActivatedControl:
+    - Microglia_NonActivated_Control
+  MicrogliaNonActivatedTDP43KD:
+    - Microglia_NonActivated_TDP43KD
+MicrogliaActivatedControlVersusActivatedTDP43KD:
   column_name:
     - group
-  ControlControl:
-    -Control_Control
-  ControlTDP43KD:
-    -Control_TDP43KD
-CycloheximideControlVersusCycloheximideTDP43KD:
+  MicrogliaActivatedControl:
+    - Microglia_Activated_Control
+  MicrogliaActivatedTDP43KD:
+    - Microglia_Activated_TDP43KD
+MicrogliaNonActivatedTDP43KDVersusActivatedTDP43KD:
   column_name:
     - group
-  CycloheximideControl:
-    -Cycloheximide_Control
-  CycloheximideTDP43KD:
-    -Cycloheximide_TDP43KD
-ControlTDP43KDVersusCycloheximideTDP43KD:
-  column_name:
-    - group
-  ControlTDP43KD:
-    -Control_TDP43KD
-  CycloheximideTDP43KD:
-    -Cycloheximide_TDP43KD
-nonActivatedControlVersusActivatedControl:
-  column_name:
-    - group
-  nonActivatedControl:
-    - NonActivated_Control
-  ActivatedControl:
-    - Activated_Control
-nonActivatedControlVersusNonActivatedTDP43KD:
-  column_name:
-    - group
-  nonActivatedControl:
-    - NonActivated_Control
-  nonActivatedTDP43KD:
-    - NonActivated_TDP43KD
-ActivatedControlVersusActivatedTDP43KD:
-  column_name:
-    - group
-  ActivatedControl:
-    - Activated_Control
-  ActivatedTDP43KD:
-    - Activated_TDP43KD
-nonActivatedTDP43KDVersusActivatedTDP43KD:
-  column_name:
-    - group
-  nonActivatedTDP43KD:
-    - NonActivated_TDP43KD
-  ActivatedTDP43KD:
-    - Activated_TDP43KD
-clone1:
-  column_name:
-    - group
-  Control1:
-    - clone1_Control
-  TDP43KD1:
-    - clone1_TDP43KD
-clone6:
-  column_name:
-    - group
-  Control6:
-    - clone6_Control
-  TDP43KD6:
-    - clone6_TDP43KD
-cclone10:
-  column_name:
-    - group
-  Control10:
-    - clone10_Control
-  TDP43KD10:
-    - clone10_TDP43KD
-clone17:
-  column_name:
-    - group
-  Control17:
-    - clone17_Control
-  TDP43KD17:
-    - clone17_TDP43KD
+  MicrogliaNonActivatedTDP43KD:
+    - Microglia_NonActivated_TDP43KD
+  MicrogliaActivatedTDP43KD:
+    - Microglia_Activated_TDP43KD
