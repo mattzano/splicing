@@ -98,30 +98,30 @@ ControlControlVersusCycloheximideControl:
   column_name:
     - group
   ControlControl:
-    -Control_Control
+    - Control_Control
   CycloheximideControl:
-    -Cycloheximide_Control
+    - Cycloheximide_Control
 ControlControlVersusControlTDP43KD:
   column_name:
     - group
   ControlControl:
-    -Control_Control
+    - Control_Control
   ControlTDP43KD:
-    -Control_TDP43KD
+    - Control_TDP43KD
 CycloheximideControlVersusCycloheximideTDP43KD:
   column_name:
     - group
   CycloheximideControl:
-    -Cycloheximide_Control
+    - Cycloheximide_Control
   CycloheximideTDP43KD:
-    -Cycloheximide_TDP43KD
+    - Cycloheximide_TDP43KD
 ControlTDP43KDVersusCycloheximideTDP43KD:
   column_name:
     - group
   ControlTDP43KD:
-    -Control_TDP43KD
+    - Control_TDP43KD
   CycloheximideTDP43KD:
-    -Cycloheximide_TDP43KD
+    - Cycloheximide_TDP43KD
 clone1:
   column_name:
     - group
