@@ -40,19 +40,20 @@ rule allParse:
 #         mkdir -p {params.out_folder}
 #         python3 ./scripts/splicejunction2bed.py -i {input.sj_tab} -o {output.bed}
 #         """
-rule majiq_psi_parse:
-    input:
-        psi_voila_tsv = lambda wildcards: os.path.join(MAJIQ_DIR,"psi_voila_tsv_single",'{sample}' + ".psi.tsv")
-    wildcard_constraints:
-        sample="|".join(SAMPLE_NAMES)
-    conda:
-        "../envs/splicing_dependencies.yml"
-    output:
-        parsed_csv = os.path.join(MAJIQ_DIR,"psi_voila_tsv_single",'{sample}' + "_parsed.csv")
-    shell:
-        """
-        Rscript scripts/parsing_psi_command_line.R --input {input.psi_voila_tsv} -o {output.parsed_csv}
-        """
+
+#rule majiq_psi_parse:
+#    input:
+#        psi_voila_tsv = lambda wildcards: os.path.join(MAJIQ_DIR,"psi_voila_tsv_single",'{sample}' + ".psi.tsv")
+#    wildcard_constraints:
+#        sample="|".join(SAMPLE_NAMES)
+#    conda:
+#        "../envs/splicing_dependencies.yml"
+#    output:
+#        parsed_csv = os.path.join(MAJIQ_DIR,"psi_voila_tsv_single",'{sample}' + "_parsed.csv")
+#    shell:
+#        """
+#        Rscript scripts/parsing_psi_command_line.R --input {input.psi_voila_tsv} -o {output.parsed_csv}
+#        """
 
 # rule combine_psi_per_sample:
 #     input:
