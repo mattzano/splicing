@@ -41,7 +41,6 @@ rule majiq_psi:
         mkdir -p {params.psi_output_folder}
         {params.majiq_path} psi {input.group_majiq} -j {threads} -o {params.psi_output_folder} -n {wildcards.group}
         """
-
 rule majiq_delta_psi:
     input:
         majiq_config_file = MAJIQ_DIR + config['run_name'] + "_majiqConfig.tsv",
@@ -61,7 +60,6 @@ rule majiq_delta_psi:
         mkdir -p {params.delta_psi_output_folder}
         {params.majiq_path} deltapsi -grp1 {input.base_group_majiq} -grp2 {input.contrast_group_majiq} -j {threads} -o {params.delta_psi_output_folder}{params.majiq_psi_extra_parameters} --name {wildcards.bse} {wildcards.contrast}
         """
-
 rule majiq_delta_psi_tsv:
     input:
     #this is always calling from the column named 'group' in the sample csv file
