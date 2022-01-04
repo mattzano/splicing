@@ -9,35 +9,35 @@ doxCurves00125:
   noDox:
     - no_dox
   dox00125:
-    - dox_0.0125
+    - dox_0125
 doxCurves00187:
   column_name:
     - group
   noDox:
     - no_dox
   dox00187:
-    - dox_0.0187
+    - dox_0187
 doxCurves0021:
   column_name:
     - group
   noDox:
     - no_dox
   dox0021:
-    - dox_0.021
+    - dox_021
 doxCurves0025:
   column_name:
     - group
   noDox:
     - no_dox
   dox0025:
-    - dox_0.025
+    - dox_025
 doxCurves0075:
   column_name:
     - group
   noDox:
     - no_dox
   dox0075:
-    - dox_0.075
+    - dox_075
 ControlControlVersusCycloheximideControl:
   column_name:
     - group
